@@ -41,6 +41,8 @@ class HomeFragment : Fragment(), AddTodoFragment.DialogNextBtnClickListener,
 
         binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding.root
+
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -49,6 +51,7 @@ class HomeFragment : Fragment(), AddTodoFragment.DialogNextBtnClickListener,
         init(view)
         getDataFromFireBase()
         registerEvents()
+        signOut()
 
     }
 
@@ -68,6 +71,15 @@ class HomeFragment : Fragment(), AddTodoFragment.DialogNextBtnClickListener,
         }
     }
 
+    private fun signOut() {
+        auth = FirebaseAuth.getInstance()
+
+        binding.logoutButton.setOnClickListener {
+            auth.signOut()
+            navController.navigate(R.id.action_homeFragment_to_signInFragment)
+        }
+    }
+
     private fun init(view: View) {
         navController = Navigation.findNavController(view)
         auth = FirebaseAuth.getInstance()
@@ -80,7 +92,7 @@ class HomeFragment : Fragment(), AddTodoFragment.DialogNextBtnClickListener,
 
         mList = mutableListOf()
         adapter = ToDoAdapter(mList)
-        adapter.setListner(this)
+        adapter.setListener(this)
         binding.recyclerView.adapter = adapter
 
     }
