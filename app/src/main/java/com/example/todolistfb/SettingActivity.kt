@@ -9,6 +9,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.appcompat.widget.SwitchCompat
 import androidx.core.app.ActivityOptionsCompat
+import androidx.navigation.NavController
+import com.example.todolistfb.databinding.ActivitySettingBinding
 
 
 class SettingActivity : AppCompatActivity() {
@@ -19,6 +21,9 @@ class SettingActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_setting)
 
+        val binding = ActivitySettingBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
         val switch = findViewById<SwitchCompat>(R.id.switch1)
         val picture = findViewById<ImageView>(R.id.imageView)
         val textChange = findViewById<TextView>(R.id.textChange)
@@ -26,6 +31,11 @@ class SettingActivity : AppCompatActivity() {
         val sharedPreferences = getSharedPreferences("Mode", Context.MODE_PRIVATE)
         val editor = sharedPreferences.edit()
         val nightMode = sharedPreferences.getBoolean("night", false)
+
+
+        binding.nextBtn.setOnClickListener {
+            onBackPressed()
+        }
 
         if (nightMode) {
             switch.isChecked = true
