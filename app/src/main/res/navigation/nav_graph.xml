@@ -76,25 +76,9 @@
             app:enterAnim="@android:anim/fade_in"
             app:exitAnim="@android:anim/fade_out" />
         <action
-            android:id="@+id/action_homeFragment_to_accountFragment"
-            app:destination="@id/accountFragment" />
-        <action
-            android:id="@+id/action_homeFragment_to_settingFragment"
-            app:destination="@id/settingFragment" />
-        <action
             android:id="@+id/action_homeFragment_to_settingActivity"
             app:destination="@id/settingActivity" />
     </fragment>
-    <fragment
-        android:id="@+id/accountFragment"
-        android:name="com.example.todolistfb.fragments.AccountFragment"
-        android:label="fragment_account"
-        tools:layout="@layout/fragment_account" />
-    <fragment
-        android:id="@+id/settingFragment"
-        android:name="com.example.todolistfb.fragments.SettingFragment"
-        android:label="fragment_setting"
-        tools:layout="@layout/fragment_setting" />
     <activity
         android:id="@+id/settingActivity"
         android:name="com.example.todolistfb.SettingActivity"

@@ -70,9 +70,9 @@ class HomeFragment : Fragment(), AddTodoFragment.DialogNextBtnClickListener,
 
         }
 
-        binding.btnAcc.setOnClickListener {
-            navController.navigate(R.id.action_homeFragment_to_accountFragment)
-        }
+//        binding.btnAcc.setOnClickListener {
+//            navController.navigate(R.id.action_homeFragment_to_accountFragment)
+//        }
 
         binding.btnSettings.setOnClickListener {
             navController.navigate(R.id.action_homeFragment_to_settingActivity)

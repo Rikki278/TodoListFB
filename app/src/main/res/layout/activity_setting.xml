@@ -10,9 +10,9 @@
         android:id="@+id/cardView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="75dp"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="200dp"
-        android:layout_marginEnd="10dp"
+        android:layout_marginEnd="50dp"
         app:cardCornerRadius="20dp"
         app:cardElevation="8dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -22,25 +22,27 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:orientation="vertical"
             android:padding="26dp"
+            android:scaleType="centerCrop"
             tools:ignore="UseCompoundDrawables">
 
             <ImageView
                 android:id="@+id/imageView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="217dp"
                 android:layout_gravity="center"
-                app:srcCompat="@drawable/vergil_pathetic" />
+                app:srcCompat="@drawable/vergil_no_smile" />
 
             <TextView
-                android:id="@+id/textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:id="@+id/textChange"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:layout_marginTop="26dp"
                 android:gravity="center"
-                android:text="Change theme"
+                android:text="Pathetic"
                 android:textSize="34sp"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -50,8 +52,8 @@
         android:id="@+id/switch1"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:layout_marginTop="600dp"
         android:layout_marginStart="120dp"
+        android:layout_marginTop="600dp"
         android:layout_marginEnd="10dp"
         android:text="Light / Dark "
         android:textSize="24sp"
