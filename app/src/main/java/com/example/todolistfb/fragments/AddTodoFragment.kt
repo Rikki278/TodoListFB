@@ -33,8 +33,7 @@ class AddTodoFragment : DialogFragment() {
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
 
@@ -47,8 +46,7 @@ class AddTodoFragment : DialogFragment() {
 
         if (arguments != null) {
             toDoData = ToDoData(
-                arguments?.getString("taskId").toString(),
-                arguments?.getString("task").toString()
+                arguments?.getString("taskId").toString(), arguments?.getString("task").toString()
             )
             binding.todoEt.setText(toDoData?.task)
         }
@@ -61,7 +59,7 @@ class AddTodoFragment : DialogFragment() {
             if (todoTask.isNotEmpty()) {
                 if (toDoData == null) {
                     listener.onSaveTask(todoTask, binding.todoEt)
-                }else{
+                } else {
                     toDoData?.task = todoTask
                     listener.onUpdateTask(toDoData!!, binding.todoEt)
                 }

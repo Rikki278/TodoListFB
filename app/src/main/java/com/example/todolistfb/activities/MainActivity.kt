@@ -1,9 +1,10 @@
-package com.example.todolistfb
+package com.example.todolistfb.activities
 
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatDelegate
+import com.example.todolistfb.R
 
 class MainActivity : AppCompatActivity() {
 

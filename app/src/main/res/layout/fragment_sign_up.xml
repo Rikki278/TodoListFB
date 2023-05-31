@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.SignUpFragment">
+    tools:context=".fragments.login.SignUpFragment">
 
     <ImageView
         android:id="@+id/imageView"
@@ -15,30 +15,33 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/text_color" />
 
     <TextView
+        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/sign_up"
-        android:textSize="32sp"
-        android:textStyle="bold"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
+        android:text="@string/sign_up"
         android:textColor="@color/white"
+        android:textSize="32sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="60dp"
         android:layout_height="130dp"
-        android:scaleType="fitXY"
         android:rotation="180"
+        android:scaleType="fitXY"
         android:src="@drawable/ellipse_one"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/secondary_color" />
 
 
     <ImageView
@@ -51,7 +54,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:tint="@color/secondary_color" />
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/card1"
@@ -82,12 +86,13 @@
                 android:hint="@string/enter_your_email"
                 android:inputType="textEmailAddress"
                 android:paddingStart="12dp"
+                android:paddingTop="15dp"
                 android:paddingEnd="12dp"
-                android:paddingTop="15dp" />
+                android:textColorHint="@color/text_color"
+                android:backgroundTint="@color/hint_background"/>
         </com.google.android.material.textfield.TextInputLayout>
 
     </com.google.android.material.card.MaterialCardView>
-
 
 
     <com.google.android.material.card.MaterialCardView
@@ -110,8 +115,8 @@
             android:background="@color/white"
             app:boxStrokeWidth="0dp"
             app:boxStrokeWidthFocused="0dp"
-            app:passwordToggleEnabled="true"
-            app:hintEnabled="false">
+            app:hintEnabled="false"
+            app:passwordToggleEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/passEt"
@@ -121,8 +126,10 @@
                 android:hint="@string/type_your_password"
                 android:inputType="textPassword"
                 android:paddingStart="12dp"
+                android:paddingTop="15dp"
                 android:paddingEnd="12dp"
-                android:paddingTop="15dp" />
+                android:textColorHint="@color/text_color"
+                android:backgroundTint="@color/hint_background"/>
         </com.google.android.material.textfield.TextInputLayout>
 
     </com.google.android.material.card.MaterialCardView>
@@ -160,7 +167,9 @@
                 android:inputType="textPassword"
                 android:paddingStart="12dp"
                 android:paddingTop="15dp"
-                android:paddingEnd="12dp" />
+                android:paddingEnd="12dp"
+                android:backgroundTint="@color/hint_background"
+                android:textColorHint="@color/text_color" />
         </com.google.android.material.textfield.TextInputLayout>
 
     </com.google.android.material.card.MaterialCardView>
@@ -179,10 +188,10 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:layout_marginStart="12dp"
-        android:textSize="16sp"
+        android:layout_marginTop="16dp"
         android:text="@string/already_registered"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="@id/card3"
         app:layout_constraintTop_toBottomOf="@id/card3" />
 
@@ -190,26 +199,26 @@
         android:id="@+id/authTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
         android:text="@string/sign_in"
         android:textColor="@color/text_color"
         android:textSize="16sp"
-        android:layout_marginStart="8dp"
         app:layout_constraintStart_toEndOf="@id/textView2"
         app:layout_constraintTop_toTopOf="@id/textView2" />
 
     <ProgressBar
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/progressBar"
         style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
         android:indeterminateTint="@color/text_color"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="@id/imageView3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/authTextView"
-        android:layout_marginBottom="50dp"
-        android:visibility="gone"/>
+        app:layout_constraintTop_toBottomOf="@+id/authTextView" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

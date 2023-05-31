@@ -20,7 +20,6 @@ class ToDoAdapter(private val list: MutableList<ToDoData>) :
         RecyclerView.ViewHolder(binding.root)
 
 
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ToDoViewHolder {
         val binding =
             EachTodoItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -45,9 +44,6 @@ class ToDoAdapter(private val list: MutableList<ToDoData>) :
                 }
             }
         }
-
-
-
     }
 
     interface ToDoAdapterClicksInterface {

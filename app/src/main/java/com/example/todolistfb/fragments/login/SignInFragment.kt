@@ -1,4 +1,4 @@
-package com.example.todolistfb.fragments
+package com.example.todolistfb.fragments.login
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -21,9 +21,8 @@ class SignInFragment : Fragment() {
 
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
+    ): View {
         // Inflate the layout for this fragment
         binding = FragmentSignInBinding.inflate(inflater, container, false)
         return binding.root
@@ -55,11 +54,10 @@ class SignInFragment : Fragment() {
             if (email.isNotEmpty() && pass.isNotEmpty()) {
 
                 binding.progressBar.visibility = View.VISIBLE
-                auth.signInWithEmailAndPassword(email, pass).addOnCompleteListener(
-                    OnCompleteListener {
+                auth.signInWithEmailAndPassword(email, pass)
+                    .addOnCompleteListener(OnCompleteListener {
                         if (it.isSuccessful) {
-                            Toast.makeText(context, "Login Successfully", Toast.LENGTH_SHORT)
-                                .show()
+                            Toast.makeText(context, "Login Successfully", Toast.LENGTH_SHORT).show()
                             navController.navigate(R.id.action_signInFragment_to_homeFragment)
                         } else {
                             Toast.makeText(context, it.exception?.message, Toast.LENGTH_SHORT)
@@ -69,12 +67,10 @@ class SignInFragment : Fragment() {
                         binding.progressBar.visibility = View.GONE
                     })
             } else {
-                Toast.makeText(context, "Empty fields not allowed", Toast.LENGTH_SHORT)
-                    .show()
+                Toast.makeText(context, "Empty fields not allowed", Toast.LENGTH_SHORT).show()
             }
 
         }
     }
-
 
 }

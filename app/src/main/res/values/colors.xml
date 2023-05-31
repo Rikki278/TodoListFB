@@ -10,4 +10,7 @@
 
     <color name="text_color">#21108A</color>
     <color name="secondary_color">#D5CEFF</color>
+    <color name="hint_color">#9C27B0</color>
+    <color name="hint_background">@color/white</color>
+
 </resources>

@@ -18,8 +18,7 @@ class SplashFragment : Fragment() {
     private lateinit var navController: NavController
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_splash, container, false)
@@ -32,9 +31,9 @@ class SplashFragment : Fragment() {
         navController = Navigation.findNavController(view)
 
         Handler(Looper.myLooper()!!).postDelayed(Runnable {
-            if(auth.currentUser != null){
+            if (auth.currentUser != null) {
                 navController.navigate(R.id.action_splashFragment_to_homeFragment)
-            }else{
+            } else {
                 navController.navigate(R.id.action_splashFragment_to_signInFragment)
 
             }

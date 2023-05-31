@@ -1,4 +1,4 @@
-package com.example.todolistfb.fragments
+package com.example.todolistfb.fragments.login
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -20,9 +20,8 @@ class SignUpFragment : Fragment() {
     private lateinit var binding: FragmentSignUpBinding
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
+    ): View {
         // Inflate the layout for this fragment
 
         binding = FragmentSignUpBinding.inflate(inflater, container, false)
@@ -57,13 +56,11 @@ class SignUpFragment : Fragment() {
                 if (pass == verifyPass) {
 
                     binding.progressBar.visibility = View.VISIBLE
-                    auth.createUserWithEmailAndPassword(email, pass).addOnCompleteListener(
-                        OnCompleteListener {
+                    auth.createUserWithEmailAndPassword(email, pass)
+                        .addOnCompleteListener(OnCompleteListener {
                             if (it.isSuccessful) {
                                 Toast.makeText(
-                                    context,
-                                    "Registered Successfully",
-                                    Toast.LENGTH_SHORT
+                                    context, "Registered Successfully", Toast.LENGTH_SHORT
                                 ).show()
                                 navController.navigate(R.id.action_signUpFragment_to_homeFragment)
                             } else {
@@ -75,13 +72,11 @@ class SignUpFragment : Fragment() {
 
 
                 } else {
-                    Toast.makeText(context, "Your passwords don't match", Toast.LENGTH_SHORT)
-                        .show()
+                    Toast.makeText(context, "Your passwords don't match", Toast.LENGTH_SHORT).show()
                 }
 
             } else {
-                Toast.makeText(context, "Empty fields not allowed", Toast.LENGTH_SHORT)
-                    .show()
+                Toast.makeText(context, "Empty fields not allowed", Toast.LENGTH_SHORT).show()
             }
         }
     }

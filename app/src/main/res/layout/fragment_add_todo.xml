@@ -18,7 +18,8 @@
             android:layout_marginTop="12dp"
             android:src="@drawable/ic_baseline_close_24"
             app:layout_constraintEnd_toEndOf="@+id/cardView1"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/text_color" />
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/cardView1"
@@ -46,10 +47,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:background="@color/white"
+                    android:backgroundTint="@color/hint_background"
                     android:hint="@string/type_your_task"
                     android:inputType="textEmailAddress"
                     android:paddingStart="12dp"
-                    android:paddingTop="15dp" />
+                    android:paddingTop="15dp"
+                    android:textColorHint="@color/text_color"
+                    tools:ignore="TextContrastCheck" />
             </com.google.android.material.textfield.TextInputLayout>
 
         </com.google.android.material.card.MaterialCardView>

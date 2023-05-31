@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.SignInFragment">
+    tools:context=".fragments.login.SignInFragment">
 
     <ImageView
         android:id="@+id/imageView"
@@ -15,7 +15,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/text_color"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -38,7 +39,8 @@
         android:src="@drawable/ellipse_one"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/secondary_color"/>
 
 
     <ImageView
@@ -51,7 +53,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:tint="@color/secondary_color"/>
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/card1"
@@ -84,7 +87,9 @@
                 android:inputType="textEmailAddress"
                 android:paddingStart="12dp"
                 android:paddingEnd="12dp"
-                android:paddingTop="15dp" />
+                android:paddingTop="15dp"
+                android:textColorHint="@color/text_color"
+                android:backgroundTint="@color/hint_background"/>
         </com.google.android.material.textfield.TextInputLayout>
 
     </com.google.android.material.card.MaterialCardView>
@@ -123,7 +128,9 @@
                 android:inputType="textPassword"
                 android:paddingStart="12dp"
                 android:paddingEnd="12dp"
-                android:paddingTop="15dp" />
+                android:paddingTop="15dp"
+                android:textColorHint="@color/text_color"
+                android:backgroundTint="@color/hint_background"/>
         </com.google.android.material.textfield.TextInputLayout>
 
     </com.google.android.material.card.MaterialCardView>

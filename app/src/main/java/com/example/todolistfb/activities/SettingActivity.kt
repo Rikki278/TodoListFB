@@ -1,4 +1,4 @@
-package com.example.todolistfb
+package com.example.todolistfb.activities
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -8,15 +8,14 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.appcompat.widget.SwitchCompat
-import androidx.core.app.ActivityOptionsCompat
-import androidx.navigation.NavController
+import com.example.todolistfb.R
 import com.example.todolistfb.databinding.ActivitySettingBinding
 
 
 class SettingActivity : AppCompatActivity() {
 
 
-    @SuppressLint("UseSwitchCompatOrMaterialCode")
+    @SuppressLint("UseSwitchCompatOrMaterialCode", "SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_setting)
@@ -31,7 +30,6 @@ class SettingActivity : AppCompatActivity() {
         val sharedPreferences = getSharedPreferences("Mode", Context.MODE_PRIVATE)
         val editor = sharedPreferences.edit()
         val nightMode = sharedPreferences.getBoolean("night", false)
-
 
         binding.nextBtn.setOnClickListener {
             onBackPressed()
@@ -60,7 +58,6 @@ class SettingActivity : AppCompatActivity() {
                 editor.apply()
                 picture.setImageResource(R.drawable.vergil_smile)
                 textChange.text = "Motivated"
-
             }
 
         }

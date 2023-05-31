@@ -1,5 +1,6 @@
-package com.example.todolistfb.fragments
+package com.example.todolistfb.fragments.home
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -11,6 +12,7 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.todolistfb.R
 import com.example.todolistfb.databinding.FragmentHomeBinding
+import com.example.todolistfb.fragments.AddTodoFragment
 import com.example.todolistfb.utils.ToDoAdapter
 import com.example.todolistfb.utils.ToDoData
 import com.google.android.material.textfield.TextInputEditText
@@ -36,12 +38,11 @@ class HomeFragment : Fragment(), AddTodoFragment.DialogNextBtnClickListener,
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
 
         binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding.root
-
 
     }
 
@@ -58,21 +59,16 @@ class HomeFragment : Fragment(), AddTodoFragment.DialogNextBtnClickListener,
     private fun registerEvents() {
         binding.addBtnHome.setOnClickListener {
             // prevent multiple instance
-            if (popUpFragment != null)
-                childFragmentManager.beginTransaction().remove(popUpFragment!!).commit()
+            if (popUpFragment != null) childFragmentManager.beginTransaction()
+                .remove(popUpFragment!!).commit()
 
             popUpFragment = AddTodoFragment()
             popUpFragment!!.setListener(this)
             popUpFragment!!.show(
-                childFragmentManager,
-                AddTodoFragment.TAG
+                childFragmentManager, AddTodoFragment.TAG
             )
 
         }
-
-//        binding.btnAcc.setOnClickListener {
-//            navController.navigate(R.id.action_homeFragment_to_accountFragment)
-//        }
 
         binding.btnSettings.setOnClickListener {
             navController.navigate(R.id.action_homeFragment_to_settingActivity)
@@ -83,7 +79,7 @@ class HomeFragment : Fragment(), AddTodoFragment.DialogNextBtnClickListener,
     private fun signOut() {
         auth = FirebaseAuth.getInstance()
 
-        binding.logoutButton.setOnClickListener {
+        binding.btnLogOut.setOnClickListener {
             auth.signOut()
             navController.navigate(R.id.action_homeFragment_to_signInFragment)
         }
@@ -93,8 +89,7 @@ class HomeFragment : Fragment(), AddTodoFragment.DialogNextBtnClickListener,
         navController = Navigation.findNavController(view)
         auth = FirebaseAuth.getInstance()
         authId = auth.currentUser!!.uid
-        databaseReference = Firebase.database.reference.child("Tasks")
-            .child(authId)
+        databaseReference = Firebase.database.reference.child("Tasks").child(authId)
 
         binding.recyclerView.setHasFixedSize(true)
         binding.recyclerView.layoutManager = LinearLayoutManager(context)
@@ -127,25 +122,21 @@ class HomeFragment : Fragment(), AddTodoFragment.DialogNextBtnClickListener,
                 Toast.makeText(context, error.message, Toast.LENGTH_SHORT).show()
 
             }
-
         })
     }
 
     override fun onSaveTask(todo: String, todoEt: TextInputEditText) {
-        databaseReference
-            .push()
-            .setValue(todo)
-            .addOnCompleteListener {
-                if (it.isSuccessful) {
-                    Toast.makeText(context, "Task saved successfully", Toast.LENGTH_SHORT).show()
+        databaseReference.push().setValue(todo).addOnCompleteListener {
+            if (it.isSuccessful) {
+                Toast.makeText(context, "Task saved successfully", Toast.LENGTH_SHORT).show()
 
-                } else {
-                    Toast.makeText(context, it.exception?.message, Toast.LENGTH_SHORT).show()
-                }
-
-                todoEt.text = null
-                popUpFragment!!.dismiss()
+            } else {
+                Toast.makeText(context, it.exception?.message, Toast.LENGTH_SHORT).show()
             }
+
+            todoEt.text = null
+            popUpFragment!!.dismiss()
+        }
     }
 
     override fun onUpdateTask(toDoData: ToDoData, todoEt: TextInputEditText) {
@@ -175,8 +166,8 @@ class HomeFragment : Fragment(), AddTodoFragment.DialogNextBtnClickListener,
     }
 
     override fun onEditTaskBtnClick(toDoData: ToDoData) {
-        if (popUpFragment != null)
-            childFragmentManager.beginTransaction().remove(popUpFragment!!).commit()
+        if (popUpFragment != null) childFragmentManager.beginTransaction().remove(popUpFragment!!)
+            .commit()
 
         popUpFragment = AddTodoFragment.newInstance(toDoData.taskId, toDoData.task)
         popUpFragment!!.setListener(this)

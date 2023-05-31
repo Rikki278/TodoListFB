@@ -15,7 +15,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/text_color" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -46,20 +47,22 @@
         android:layout_height="48dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="32dp"
-        android:background="@color/text_color"
-        android:src="@drawable/ic_baseline_add_24"
+        android:tint="@color/text_color"
+        android:src="@drawable/ic_add_square"
         app:layout_constraintBottom_toTopOf="@+id/recyclerView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="1.0"
+        app:tint="@color/text_color"
+        tools:ignore="UseAppTint" />
 
     <ImageView
-        android:id="@+id/btnAcc"
+        android:id="@+id/btnLogOut"
         android:layout_width="64dp"
         android:layout_height="64dp"
         android:layout_marginTop="40dp"
         android:layout_marginEnd="173dp"
-        android:src="@drawable/ic_user"
+        android:src="@drawable/ic_log_out_2"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
         app:layout_constraintHorizontal_bias="0.189"
         app:layout_constraintStart_toStartOf="parent"
@@ -73,7 +76,7 @@
         android:src="@drawable/ic_gear"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.872"
-        app:layout_constraintStart_toEndOf="@+id/btnAcc"
+        app:layout_constraintStart_toEndOf="@+id/btnLogOut"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
@@ -86,17 +89,6 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
-
-    <Button
-        android:id="@+id/logoutButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="136dp"
-        android:text="Exit"
-        app:layout_constraintEnd_toStartOf="@+id/addBtnHome"
-        app:layout_constraintHorizontal_bias="0.136"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <ProgressBar
         android:id="@+id/progressBar"

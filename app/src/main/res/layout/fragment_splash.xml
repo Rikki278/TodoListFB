@@ -10,12 +10,16 @@
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="200dp"
+        android:rotation="180"
         android:scaleType="fitXY"
         android:src="@drawable/design_one"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:tint="@color/text_color" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -25,31 +29,50 @@
         android:src="@drawable/ellipse_one"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/secondary_color" />
 
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="60dp"
+        android:layout_height="130dp"
+        android:rotation="180"
+        android:scaleType="fitXY"
+        android:src="@drawable/ellipse_one"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.321"
+        app:tint="@color/secondary_color" />
 
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="0dp"
         android:layout_height="210dp"
-        android:layout_marginStart="12dp"
+        android:rotation="180"
         android:scaleType="fitXY"
         android:src="@drawable/design_two"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:tint="@color/text_color" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Todo"
-        android:textColor="@color/text_color"
-        android:textStyle="italic|bold"
-        android:gravity="center_horizontal"
         android:fontFamily="@font/inter_extra_bold"
+        android:gravity="center_horizontal"
+        android:text="@string/get_motivated"
+        android:textColor="@color/text_color"
         android:textSize="60sp"
+        android:textStyle="italic|bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
