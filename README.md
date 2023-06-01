@@ -1,4 +1,4 @@
-# Додакток Motiovation Note
+# Додакток Motivation Note
 
 ## Виконано:
 | ФІО  |  Група |
