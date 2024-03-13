@@ -1,12 +1,5 @@
 # Додакток Motivation Note
 
-## Виконано:
-| ФІО  |  Група |
-| -------- | ------ |
-| [Боровик Святослав](https://github.com/Rikki278) | ЛАІ-215 (АІ-213)  |
-| [Кірпіков Юрій](https://github.com/harf1n) |АІ-213  |
-| [Фокін Макс](https://github.com/Fox123582) | АІ-213  |
-
 ## Встановлення:
 [Завантажити](https://github.com/Rikki278/TodoListFB/blob/master/Motivation%20Note.apk)
 
